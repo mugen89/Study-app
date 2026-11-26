@@ -1,0 +1,36 @@
+name: Release
+
+# Push a tag like v1.2.0 to build the portable zip and publish a GitHub Release.
+# The app's "Check for updates" reads the latest release from this repository.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Test
+        run: dotnet test tests/StudyApp.Tests/StudyApp.Tests.csproj -c Release
+
+      - name: Publish portable package
+        shell: pwsh
+        run: ./build/publish.ps1 -Version "${{ github.ref_name }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          name: Study App ${{ github.ref_name }}
+          body_path: build/release-notes.md
+          files: |
+            artifacts/StudyApp-*-win-x64.zip
+            artifacts/StudyApp-*-win-x64.zip.sha256

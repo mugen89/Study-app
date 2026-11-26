@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mugen89/Study-app/docs/studyapp.schema.json",
+  "title": "Study App import file",
+  "description": "Flashcards, questions and notes for Study App (schemaVersion 1). The importer also accepts many variations; this schema describes the canonical form.",
+  "type": ["object", "array"],
+  "$defs": {
+    "page": {
+      "description": "Page(s) in the textbook, e.g. \"52\" or \"52-53\".",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "integer" },
+        { "type": "array", "items": { "type": ["string", "integer"] } }
+      ]
+    },
+    "difficulty": {
+      "oneOf": [
+        { "type": "integer", "minimum": 1, "maximum": 5 },
+        { "type": "string", "enum": ["very easy", "easy", "medium", "hard", "expert"] }
+      ]
+    },
+    "tags": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "string" }
+      ]
+    },
+    "letter": { "type": "string", "pattern": "^[A-Ha-h]$" },
+    "chapter": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "number": { "type": ["string", "integer"] },
+            "title": { "type": "string" },
+            "pages": { "type": "string" }
+          }
+        },
+        { "type": "string" }
+      ]
+    },
+    "common": {
+      "type": "object",
+      "properties": {
+        "page": { "$ref": "#/$defs/page" },
+        "explanation": { "type": "string" },
+        "difficulty": { "$ref": "#/$defs/difficulty" },
+        "tags": { "$ref": "#/$defs/tags" },
+        "source": { "type": "string" }
+      }
+    },
+    "option": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "required": ["text"],
+          "properties": {
+            "text": { "type": "string" },
+            "why": { "type": "string" },
+            "correct": { "type": "boolean" }
+          }
+        }
+      ]
+    },
+    "flashcard": {
+      "allOf": [{ "$ref": "#/$defs/common" }],
+      "type": "object",
+      "required": ["type", "front", "back"],
+      "properties": {
+        "type": { "const": "flashcard" },
+        "front": { "type": "string" },
+        "back": { "type": "string" },
+        "hint": { "type": "string" }
+      }
+    },
+    "single": {
+      "allOf": [{ "$ref": "#/$defs/common" }],
+      "type": "object",
+      "required": ["type", "question", "options", "answer"],
+      "properties": {
+        "type": { "const": "single" },
+        "question": { "type": "string" },
+        "options": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/option" } },
+        "answer": { "$ref": "#/$defs/letter" }
+      }
+    },
+    "multiple": {
+      "allOf": [{ "$ref": "#/$defs/common" }],
+      "type": "object",
+      "required": ["type", "question", "options", "answer"],
+      "properties": {
+        "type": { "const": "multiple" },
+        "question": { "type": "string" },
+        "options": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/option" } },
+        "answer": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/letter" } }
+      }
+    },
+    "truefalse": {
+      "allOf": [{ "$ref": "#/$defs/common" }],
+      "type": "object",
+      "required": ["type", "question", "answer"],
+      "properties": {
+        "type": { "const": "truefalse" },
+        "question": { "type": "string" },
+        "answer": { "type": "boolean" }
+      }
+    },
+    "short": {
+      "allOf": [{ "$ref": "#/$defs/common" }],
+      "type": "object",
+      "required": ["type", "question", "answer"],
+      "properties": {
+        "type": { "const": "short" },
+        "question": { "type": "string" },
+        "answer": { "type": "string", "description": "Model answer" },
+        "accept": { "type": "array", "items": { "type": "string" } },
+        "keyPoints": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "note": {
+      "type": "object",
+      "required": ["type", "content"],
+      "properties": {
+        "type": { "const": "note" },
+        "heading": { "type": "string" },
+        "content": { "type": "string", "description": "Markdown: paragraphs, - bullet lists, **bold**" },
+        "page": { "$ref": "#/$defs/page" }
+      }
+    },
+    "item": {
+      "oneOf": [
+        { "$ref": "#/$defs/flashcard" },
+        { "$ref": "#/$defs/single" },
+        { "$ref": "#/$defs/multiple" },
+        { "$ref": "#/$defs/truefalse" },
+        { "$ref": "#/$defs/short" },
+        { "$ref": "#/$defs/note" }
+      ]
+    },
+    "deck": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "kind": { "enum": ["deck", "test", "notes"] },
+        "difficulty": { "$ref": "#/$defs/difficulty" },
+        "description": { "type": "string" },
+        "language": { "type": "string" },
+        "source": { "type": "string" },
+        "chapter": { "$ref": "#/$defs/chapter" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/item" } }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "subject": { "type": "string" },
+    "source": { "type": "string" },
+    "language": { "type": "string" },
+    "difficulty": { "$ref": "#/$defs/difficulty" },
+    "chapter": { "$ref": "#/$defs/chapter" },
+    "deck": { "$ref": "#/$defs/deck" },
+    "items": { "type": "array", "items": { "$ref": "#/$defs/item" } },
+    "decks": { "type": "array", "items": { "$ref": "#/$defs/deck" } }
+  },
+  "items": { "$ref": "#/$defs/item" }
+}
