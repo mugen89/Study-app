@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "subject": "Human Biology (sample)",
+  "source": "Sample textbook",
+  "chapter": { "number": "1", "title": "The Heart", "pages": "10-19" },
+  "decks": [
+    {
+      "title": "The heart – summary",
+      "kind": "notes",
+      "items": [
+        {
+          "type": "note",
+          "heading": "Structure of the heart",
+          "content": "The heart is a muscular organ about the size of a fist, located in the chest between the lungs (in the **mediastinum**).\n\nIt has **four chambers**:\n- two **atria** (upper chambers) that receive blood\n- two **ventricles** (lower chambers) that pump blood out\n\nThe wall of the **left ventricle** is the thickest, because it pumps blood to the whole body.\n\n**Key points**\n- 4 chambers: 2 atria + 2 ventricles\n- Atria receive, ventricles pump\n- The left ventricle has the thickest wall",
+          "page": "10-12"
+        },
+        {
+          "type": "note",
+          "heading": "Valves and blood flow",
+          "content": "Valves keep blood flowing in **one direction**.\n\n- **Tricuspid valve** – between the right atrium and the right ventricle\n- **Mitral (bicuspid) valve** – between the left atrium and the left ventricle\n- **Pulmonary** and **aortic valves** – at the exits of the ventricles\n\nOxygen-poor blood returns through the **venae cavae** to the right atrium, is pumped through the **pulmonary artery** to the lungs, comes back oxygen-rich through the **pulmonary veins** to the left atrium and leaves through the **aorta**.\n\n**Key points**\n- Valves prevent backflow\n- Right side → lungs, left side → body",
+          "page": "13-15"
+        },
+        {
+          "type": "note",
+          "heading": "The heartbeat",
+          "content": "Each heartbeat starts in the **sinoatrial (SA) node**, the heart's natural pacemaker in the wall of the right atrium.\n\nThe cycle has two phases:\n- **Systole** – the heart muscle contracts and pumps blood out\n- **Diastole** – the muscle relaxes and the chambers fill with blood\n\nA normal resting heart rate for adults is about **60–100 beats per minute**.\n\n**Key points**\n- SA node = pacemaker\n- Systole = contraction, diastole = relaxation",
+          "page": "16-18"
+        }
+      ]
+    },
+    {
+      "title": "The heart – key facts",
+      "kind": "deck",
+      "difficulty": 2,
+      "items": [
+        {
+          "type": "flashcard",
+          "front": "How many chambers does the human heart have?",
+          "back": "Four: two atria and two ventricles.",
+          "hint": "Upper and lower, left and right.",
+          "explanation": "The atria receive blood and the ventricles pump it out of the heart.",
+          "page": "10",
+          "tags": ["structure"]
+        },
+        {
+          "type": "flashcard",
+          "front": "Which chamber has the thickest wall?",
+          "back": "The left ventricle.",
+          "hint": "It pumps blood to the whole body.",
+          "explanation": "The left ventricle must create enough pressure to push blood through the entire systemic circulation.",
+          "page": "11",
+          "tags": ["structure"]
+        },
+        {
+          "type": "flashcard",
+          "front": "What is the heart's natural pacemaker?",
+          "back": "The sinoatrial (SA) node.",
+          "hint": "It is in the wall of the right atrium.",
+          "explanation": "The SA node generates the electrical impulse that starts each heartbeat.",
+          "page": "16",
+          "tags": ["heartbeat"]
+        },
+        {
+          "type": "flashcard",
+          "front": "Which valve lies between the left atrium and the left ventricle?",
+          "back": "The mitral (bicuspid) valve.",
+          "hint": "It has two cusps.",
+          "explanation": "The mitral valve stops blood from flowing back into the left atrium when the left ventricle contracts.",
+          "page": "13",
+          "tags": ["valves"]
+        },
+        {
+          "type": "flashcard",
+          "front": "What is systole?",
+          "back": "The phase of the heartbeat in which the heart muscle contracts and pumps blood out.",
+          "hint": "The opposite of diastole.",
+          "explanation": "During systole the ventricles contract and push blood into the arteries.",
+          "page": "17",
+          "tags": ["heartbeat"]
+        },
+        {
+          "type": "flashcard",
+          "front": "Which vessels carry oxygen-rich blood from the lungs to the heart?",
+          "back": "The pulmonary veins.",
+          "hint": "Veins carry blood TO the heart.",
+          "explanation": "The pulmonary veins are the only veins that carry oxygen-rich blood; they return it to the left atrium.",
+          "page": "14",
+          "tags": ["blood flow"]
+        }
+      ]
+    },
+    {
+      "title": "The heart – practice test",
+      "kind": "test",
+      "difficulty": 3,
+      "items": [
+        {
+          "type": "single",
+          "question": "Which blood vessel carries oxygen-poor blood from the heart to the lungs?",
+          "options": [
+            { "text": "Aorta", "why": "The aorta carries oxygen-rich blood to the body." },
+            { "text": "Pulmonary artery", "why": "Correct – it is the only artery that carries oxygen-poor blood." },
+            { "text": "Pulmonary vein", "why": "Pulmonary veins bring oxygen-rich blood back to the heart." },
+            { "text": "Superior vena cava", "why": "The superior vena cava returns blood from the upper body to the right atrium." }
+          ],
+          "answer": "B",
+          "explanation": "The pulmonary artery leaves the right ventricle and takes oxygen-poor blood to the lungs.",
+          "page": "14",
+          "tags": ["blood flow"]
+        },
+        {
+          "type": "single",
+          "question": "Where is the sinoatrial (SA) node located?",
+          "options": ["In the wall of the right atrium", "In the left ventricle", "Between the two ventricles", "In the aorta"],
+          "answer": "A",
+          "explanation": "The SA node sits in the wall of the right atrium, where the impulse for each beat is generated.",
+          "page": "16",
+          "tags": ["heartbeat"]
+        },
+        {
+          "type": "multiple",
+          "question": "Which of these are valves of the heart? (Select all that apply.)",
+          "options": ["Tricuspid valve", "Mitral valve", "Sinoatrial valve", "Aortic valve"],
+          "answer": ["A", "B", "D"],
+          "explanation": "The four heart valves are the tricuspid, mitral, pulmonary and aortic valves. There is no 'sinoatrial valve' – the SA node is the pacemaker.",
+          "page": "13",
+          "tags": ["valves"]
+        },
+        {
+          "type": "truefalse",
+          "question": "The right ventricle pumps blood to the whole body.",
+          "answer": false,
+          "explanation": "The right ventricle pumps blood to the lungs; the left ventricle pumps blood to the body.",
+          "page": "15",
+          "tags": ["blood flow"]
+        },
+        {
+          "type": "truefalse",
+          "question": "During diastole the chambers of the heart fill with blood.",
+          "answer": true,
+          "explanation": "Diastole is the relaxation phase in which the chambers fill.",
+          "page": "17",
+          "tags": ["heartbeat"]
+        },
+        {
+          "type": "short",
+          "question": "What is the phase of the cardiac cycle called in which the heart muscle contracts?",
+          "answer": "Systole",
+          "accept": ["ventricular systole"],
+          "keyPoints": ["the contraction phase"],
+          "explanation": "Systole is contraction; diastole is relaxation.",
+          "page": "17",
+          "tags": ["heartbeat"]
+        },
+        {
+          "type": "short",
+          "question": "Explain why the wall of the left ventricle is thicker than the wall of the right ventricle.",
+          "answer": "Because the left ventricle pumps blood through the whole body (the systemic circulation), which needs a much higher pressure than pumping blood to the nearby lungs.",
+          "keyPoints": ["the left ventricle pumps blood to the whole body", "this needs a higher pressure", "the right ventricle only pumps blood to the lungs"],
+          "explanation": "Muscle thickness matches the work each ventricle has to do.",
+          "page": "11",
+          "difficulty": 4,
+          "tags": ["structure"]
+        },
+        {
+          "type": "single",
+          "question": "What is a normal resting heart rate for an adult?",
+          "options": ["30–50 beats per minute", "60–100 beats per minute", "110–140 beats per minute", "150–180 beats per minute"],
+          "answer": "B",
+          "explanation": "In a healthy adult at rest the heart beats about 60–100 times per minute.",
+          "page": "18",
+          "difficulty": 2,
+          "tags": ["heartbeat"]
+        }
+      ]
+    }
+  ]
+}

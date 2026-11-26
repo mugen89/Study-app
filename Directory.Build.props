@@ -1,0 +1,15 @@
+<Project>
+  <!-- Shared settings for every project. The release workflow overrides Version from the git tag. -->
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Product>Study App</Product>
+    <Authors>mugen89</Authors>
+    <Copyright>Copyright © 2026</Copyright>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <Deterministic>true</Deterministic>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+artifacts/
+artifacts-*/
+TestResults/
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# User data created when the app runs from a source folder (never commit study data)
+data/
+*.db
+*.db-wal
+*.db-shm
+update/

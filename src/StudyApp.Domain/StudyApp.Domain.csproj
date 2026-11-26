@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Pure domain logic: models, spaced repetition, grading, JSON import/export, prompts, translations. No IO. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>StudyApp.Domain</RootNamespace>
+    <AssemblyName>StudyApp.Domain</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="StudyApp.Tests" />
+  </ItemGroup>
+
+  <!-- The sample subject shown on first start; the same files live in /samples for documentation. -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\samples\sample-heart-en.json" LogicalName="StudyApp.Samples.sample-heart-en.json" />
+    <EmbeddedResource Include="..\..\samples\sample-heart-bg.json" LogicalName="StudyApp.Samples.sample-heart-bg.json" />
+  </ItemGroup>
+
+</Project>
